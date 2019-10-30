@@ -1,35 +1,37 @@
 <template>
-  <div class="load-container">
-    <div class="container container1">
-      <div class="circle circle1"></div>
-      <div class="circle circle2"></div>
-      <div class="circle circle3"></div>
-      <div class="circle circle4"></div>
-    </div>
-    <div class="container container2">
-      <div class="circle circle1"></div>
-      <div class="circle circle2"></div>
-      <div class="circle circle3"></div>
-      <div class="circle circle4"></div>
-    </div>
-    <div class="container container3">
-      <div class="circle circle1"></div>
-      <div class="circle circle2"></div>
-      <div class="circle circle3"></div>
-      <div class="circle circle4"></div>
+  <div :class="{'hdw-loading-small': size === 'small'}" class="load-container">
+    <div v-for="i in 3"
+         :key="i"
+         :class="`container${i}`"
+         class="container">
+      <div v-for="j in 4"
+           :key="`c-${j}`"
+           :style="{'background-color': bgColor}"
+           :class="`circle${j}`"
+           class="circle"></div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HedwigLoading'
-}
+    export default {
+        name: 'HedwigLoading',
+        props: {
+            size: {
+                type: String,
+                default: 'normal'
+            },
+            bgColor: {
+                type: String,
+                default: '#e8e8e8'
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
   .load-container {
-    margin: 50px auto;
+    margin: 0 auto;
     width: 48px;
     height: 48px;
     position: relative;
@@ -52,13 +54,25 @@ export default {
         animation-fill-mode: both;
       }
 
-      .circle1 { top: 0; left: 0; }
+      .circle1 {
+        top: 0;
+        left: 0;
+      }
 
-      .circle2 { top: 0; right: 0; }
+      .circle2 {
+        top: 0;
+        right: 0;
+      }
 
-      .circle3 { right: 0; bottom: 0; }
+      .circle3 {
+        right: 0;
+        bottom: 0;
+      }
 
-      .circle4 { left: 0; bottom: 0; }
+      .circle4 {
+        left: 0;
+        bottom: 0;
+      }
     }
 
     .container1 {
@@ -127,11 +141,27 @@ export default {
         animation-delay: -0.1s;
       }
     }
+
+    &.hdw-loading-small {
+      width: 24px;
+      height: 24px;
+
+      .container {
+        .circle {
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
   }
 
   @-webkit-keyframes bouncedelay {
-    0%, 80%, 100% { -webkit-transform: scale(0.0) }
-    40% { -webkit-transform: scale(1.0) }
+    0%, 80%, 100% {
+      -webkit-transform: scale(0.0)
+    }
+    40% {
+      -webkit-transform: scale(1.0)
+    }
   }
 
   @keyframes bouncedelay {
