@@ -1,5 +1,5 @@
 <template>
-  <div class="hdw-image">
+  <div @click="$emit('click')" class="hdw-image">
     <div v-if="loading">
       <hdw-loading size="small" bg-color="#f36258"/>
     </div>

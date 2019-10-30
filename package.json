@@ -1,6 +1,6 @@
 {
   "name": "hedwig-vue-ui",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/hedwig.umd.min.js",
   "license": "MIT",
   "author": "kungua <maguahongkun@outlook.com>",
