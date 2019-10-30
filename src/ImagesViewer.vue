@@ -203,9 +203,9 @@ export default {
         }, 500)
       }
     },
-    onRotate() {
+    onRotate: function () {
       this.reset()
-      const { currentIndex, imageList } = this
+      const {currentIndex, imageList} = this
 
       const oldHref = imageList[currentIndex]
 
@@ -215,10 +215,7 @@ export default {
       }
       const base = oldHref.split('?')[0]
       const querys = oldHref.split('?')[1].split('&')
-      if (querys.indexOf('imageView') > -1) {
-      } else {
-        querys.push('imageView')
-      }
+      if (querys.indexOf('imageView') <= -1) querys.push('imageView')
       let find = false
       for (let i = 0; i < querys.length; i++) {
         const c = querys[i]
