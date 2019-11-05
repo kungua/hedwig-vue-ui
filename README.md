@@ -1,29 +1,18 @@
 # hedwig-vue-ui
+![npm](https://img.shields.io/npm/dw/hedwig-vue-ui?style=flat-square)
+> 一款 UI 组件库， 提供一些使用频率较低的组件，基于 VUE
 
-## Project setup
+## 安装
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+## 使用
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+## 组件列表
 ```
 yarn build
 ```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
